@@ -75,8 +75,7 @@ public class Network {
             return false;
         }
         User user1 = getUser(name1);
-        User user2 = getUser(name2);
-        if (user1.addFollowee(name2) && user2.addFollowee(name1)) {
+        if (user1.addFollowee(name2)) {
             return true;
         }
         return false;
