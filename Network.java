@@ -55,12 +55,11 @@ public class Network {
      * network, and returns true.
      */
     public boolean addUser(String name) {
-        User[] userss = users;
         if (users.length == userCount || getUser(name) != null) {
             return false;
         }
         User newUser = new User(name);
-        userss[userCount] = newUser;
+        users[userCount] = newUser;
         return false;
     }
 
