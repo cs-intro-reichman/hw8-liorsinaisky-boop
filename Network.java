@@ -60,7 +60,7 @@ public class Network {
         }
         User newUser = new User(name);
         users[userCount] = newUser;
-        return false;
+        return true;
     }
 
     /**
