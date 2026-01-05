@@ -117,7 +117,7 @@ public class Network {
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
                 int current = followeeCount(users[i].getName());
-                if (current > max) {
+                if (current >= max) {
                     max = current;
                     most = users[i].getName();
                 }
