@@ -151,7 +151,7 @@ public class Network {
 
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
-                res += "\n" + users[i].toString();
+                res += users[i].toString() + "\n";
             }
         }
         return res;
