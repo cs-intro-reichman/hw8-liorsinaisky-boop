@@ -93,10 +93,10 @@ public class Network {
         int max = -1;
         String recommended = null;
         for (int i = 0; i < userCount; i++) {
-            if (users[i].getName().equals(name)){
+            if (users[i].getName().equals(name)) {
                 continue;
             }
-            if (user1.follows(users[i].getName())){
+            if (user1.follows(users[i].getName())) {
                 continue;
             }
             if (user1.countMutual(users[i]) > max) {
@@ -117,8 +117,8 @@ public class Network {
         for (int i = 0; i < users.length; i++) {
             if (users[i] != null) {
                 int current = followeeCount(users[i].getName());
-                if (users[i].getfCount() > max) {
-                    max = users[i].getfCount();
+                if (current > max) {
+                    max = current;
                     most = users[i].getName();
                 }
             }
@@ -134,8 +134,10 @@ public class Network {
     private int followeeCount(String name) {
         int count = 0;
         for (int i = 0; i < users.length; i++) {
-            if (users[i].follows(name)) {
-                count++;
+            if (users[i] != null) {
+                if (users[i].follows(name)) {
+                    count++;
+                }
             }
         }
         return count;
