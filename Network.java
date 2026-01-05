@@ -71,13 +71,20 @@ public class Network {
      * or if the "follows" addition failed for some reason, returns false.
      */
     public boolean addFollowee(String name1, String name2) {
-        if (getUser(name1) == null || getUser(name2) == null) {
+        if (name1 == null || name2 == null || name1.equals(name2))
             return false;
+        User user1 = null;
+        User user2 = null;
+        for (User u : users) {
+            if (u == null)
+                break;
+            if (u.getName().equals(name1))
+                user1 = u;
+            if (u.getName().equals(name2))
+                user2 = u;
         }
-        User user1 = getUser(name1);
-        if (user1.addFollowee(name2)) {
-            return true;
-        }
+        if (user1 != null && user2 != null)
+            return user1.addFollowee(name2);
         return false;
     }
 
